@@ -1,4 +1,5 @@
-import { useRef, useState, ChangeEvent, FormEvent, Suspense } from 'react';
+import { useRef, useState, Suspense } from 'react';
+import type { ChangeEvent, FormEvent } from 'react'; // Explicit type-only import
 import emailjs from '@emailjs/browser';
 import { Canvas } from "@react-three/fiber";
 import { Fox } from '../Models/Fox';

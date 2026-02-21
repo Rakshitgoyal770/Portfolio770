@@ -1,4 +1,4 @@
-import {skills} from "../Constants/index"
+import {skills} from "../constants/index"
 
 export default function About() {
     return (
