@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/icons/index";
+import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
     car,
     contact,
@@ -11,7 +11,6 @@ import {
     javascript,
     linkedin,
     mongodb,
-    cpp,
     mui,
     nextjs,
     nodejs,
@@ -24,8 +23,7 @@ import {
     tailwindcss,
     threads,
     typescript,
-    python
-} from "../assets/images/index";
+} from "../assets/icons";
 
 export const skills = [
     {
@@ -64,11 +62,6 @@ export const skills = [
         type: "Database",
     },
     {
-        imageUrl: cpp,
-        name: "C++",
-        type: "Backend",
-    },
-    {
         imageUrl: mui,
         name: "Material-UI",
         type: "Frontend",
@@ -94,9 +87,9 @@ export const skills = [
         type: "State Management",
     },
     {
-        imageUrl: python,
-        name: "Python",
-        type: "Backend",
+        imageUrl: sass,
+        name: "Sass",
+        type: "Frontend",
     },
     {
         imageUrl: tailwindcss,
