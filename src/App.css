@@ -1,0 +1,38 @@
+.block-container {
+  position: relative;
+  transition: 250ms;
+  perspective: 500px;
+}
+
+.block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform: translateZ(-1px) rotateX(10deg) rotateY(10deg);
+}
+
+.block-container .btn-front {
+  width: inherit;
+  height: inherit;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-center;
+  transition: 250ms;
+  transform-style: preserve-3d;
+}
+
+/* The Hover Effect */
+.block-container:hover .btn-back {
+  transform: translateZ(-1px) rotateX(0deg) rotateY(0deg);
+}
+
+.block-container:hover .btn-front {
+  transform: translateZ(20px) rotateX(0deg) rotateY(0deg);
+}
