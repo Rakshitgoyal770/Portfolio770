@@ -51,20 +51,20 @@
 
 
 import { useEffect, useRef } from "react";
-import * as THREE from "three"; // Use the namespace to avoid conflicts
+import * as THREE from "three"; // Import all of Three
 import { useFrame } from "@react-three/fiber";
 import { useAnimations, useGLTF } from "@react-three/drei";
 
 import birdScene from "../assets/3d/bird.glb";
 
 export default function Bird() {
-  // Use THREE.Mesh specifically and initialize with null
+  // Use THREE.Mesh specifically
   const birdRef = useRef<THREE.Mesh>(null); 
 
-  // Passing birdScene directly
+  // Load model
   const { scene, animations } = useGLTF(birdScene);
   
-  // Cast birdRef to satisfy the strict useAnimations requirement
+  // Cast the ref to 'any' here specifically for this hook to stop the TS2345 error
   const { actions } = useAnimations(animations, birdRef as any);
 
   useEffect(() => {
@@ -74,13 +74,13 @@ export default function Bird() {
   }, [actions]);
 
   useFrame(({ clock, camera }) => {
-    // Guard clause: if the ref isn't attached yet, skip this frame
+    // This Guard Clause is the most important fix for 'unknown' errors
     if (!birdRef.current) return;
 
     // Simulate bird-like motion
     birdRef.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
 
-    // Movement logic
+    // Movement logic - TypeScript now knows 'position' and 'rotation' exist
     if (birdRef.current.position.x > camera.position.x + 10) {
       birdRef.current.rotation.y = Math.PI;
     } else if (birdRef.current.position.x < camera.position.x - 10) {
