@@ -1,4 +1,4 @@
-import {skills} from "../Constants/index"
+import {skills} from "../constants/index"
 
 export default function About() {
     return (
@@ -14,7 +14,7 @@ export default function About() {
 
                     <div className="mt-5 flex flex-col gap-3 text-slate-500 font-normal text-lg leading-relaxed max-w-xl">
                         <p>
-                            A Software Engineer based in India, passionate about crafting 
+                            A Software Engineer based in India, passionate about crafting z
                             highly interactive, 3D-integrated web applications that push 
                             the boundaries of modern user experience.
                         </p>
@@ -66,23 +66,110 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="mt-16 flex flex-wrap gap-12 justify-center lg:justify-start">
-                {skills.map((skill) => (
-                    <div className="block-container w-24 h-24" key={skill.name}>
-                        {/* The Depth Layer (Shadow) */}
-                        <div className={`btn-back rounded-xl bg-slate-200 shadow-lg`} />
-                        
-                        {/* The Interactive Front Layer */}
-                        <div className="btn-front rounded-xl flex items-center justify-center shadow-sm cursor-pointer group">
-                            <img 
-                                src={skill.imageUrl}
-                                alt={skill.name}
-                                className="w-1/2 h-1/2 object-contain group-hover:scale-110 transition-transform"
-                            />
-                        </div>
-                    </div>
-                ))}
+            <div className="mt-28">
+        <div className="flex items-center gap-4 mb-14">
+            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
+            Core Technical Stack
+            </h3>
+            <div className="h-[1px] flex-1 bg-slate-200"></div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-14 justify-items-center">
+
+            {skills.map((skill) => (
+            <div key={skill.name} className="group relative w-32 h-32">
+
+                {/* Glow Background */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500"></div>
+
+                {/* Glass Card */}
+                <div className="relative w-full h-full rounded-3xl 
+                                bg-white/40 
+                                backdrop-blur-xl 
+                                border border-white/40 
+                                shadow-xl 
+                                flex items-center justify-center
+                                transition-all duration-500
+                                group-hover:-translate-y-3
+                                group-hover:shadow-2xl">
+
+                {/* Gloss Reflection */}
+                <div className="absolute top-0 left-0 w-full h-1/2 rounded-t-3xl bg-gradient-to-b from-white/60 to-transparent opacity-60 pointer-events-none"></div>
+
+                {/* Icon */}
+                <div className="relative w-14 h-14 flex items-center justify-center">
+                    <img
+                    src={skill.imageUrl}
+                    alt={skill.name}
+                    className="w-full h-full object-contain drop-shadow-md transition-all duration-500 group-hover:scale-110"
+                    />
+                </div>
+                </div>
+
+                {/* Label */}
+                <p className="mt-5 text-sm font-semibold text-center text-slate-600 group-hover:text-slate-900 transition-colors duration-300">
+                {skill.name}
+                </p>
+
             </div>
+            ))}
+
+        </div>
+        </div>
+
+        <section className="mt-36 py-28 px-8 max-w-5xl mx-auto text-center relative">
+
+  {/* Soft Background Glow */}
+  <div className="absolute inset-0 flex justify-center -z-10">
+    <div className="w-[600px] h-[300px] bg-blue-400/10 blur-3xl rounded-full"></div>
+  </div>
+
+  {/* Availability Badge */}
+  <div className="inline-block mb-8 px-6 py-2 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold tracking-[0.25em] text-slate-500 uppercase">
+    Available for Internships
+  </div>
+
+  {/* Heading */}
+  <h2 className="text-5xl md:text-7xl font-black mb-10 leading-tight text-slate-900">
+    Let’s build <br />
+    <span className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent italic">
+      together.
+    </span>
+  </h2>
+
+  {/* Description */}
+  <p className="text-slate-500 mb-14 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+    Currently seeking Software Engineering opportunities for the 2026–27
+    placement season. Based in India and open to impactful collaborations.
+  </p>
+
+  {/* Buttons */}
+  <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+    <a
+      href="mailto:rakshitgoyal770@gmail.com"
+      className="bg-slate-900 text-white px-10 py-5 rounded-full font-bold hover:bg-slate-800 transition-all text-xs w-full md:w-auto text-center"
+    >
+      EMAIL ME
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/rakshit-goyal-483798301"
+      target="_blank"
+      className="px-10 py-5 rounded-full font-bold border border-slate-300 hover:bg-slate-100 transition-all text-xs w-full md:w-auto text-center"
+    >
+      LINKEDIN
+    </a>
+
+    <a
+      href="https://github.com/Rakshitgoyal770"
+      target="_blank"
+      className="px-10 py-5 rounded-full font-bold border border-slate-300 hover:bg-slate-100 transition-all text-xs w-full md:w-auto text-center"
+    >
+      GITHUB
+    </a>
+  </div>
+
+</section>
 
         </section>
         </>
