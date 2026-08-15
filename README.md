@@ -51,3 +51,6 @@ cd Portfolio770
 npm install
 
 npm run dev
+
+the details is still incomplete
+
